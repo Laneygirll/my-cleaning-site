@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Cleaner | Quality House Cleaning</title>
     <style>
-        /* Estilos Gerais - Fundo Azul Marinho e Letras Brancas */
+        /* Estilos Gerais */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #061224; /* Azul marinho escuro do panfleto */
+            background-color: #061224; 
             color: #ffffff; 
             text-align: center;
         }
@@ -21,13 +21,27 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
         .header-banner {
             width: 100%;
             max-width: 1000px; 
             height: auto;
             display: block;
+        }
+
+        /* Nova Faixa de Região de Atendimento */
+        .location-badge {
+            background-color: #0d1f38;
+            color: #d4af37; /* Letras douradas */
+            width: 100%;
+            padding: 12px 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         /* Seção da Imagem de Destaque */
@@ -44,7 +58,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* Seção Inspirada no Panfleto (Clean Home, Happy Home) */
+        /* Seção Slogan Panfleto */
         .promo-banner-section {
             max-width: 800px;
             margin: 40px auto;
@@ -64,7 +78,7 @@
             margin-bottom: 5px;
         }
         .promo-title .gold-text {
-            color: #d4af37; /* Dourado luxuoso */
+            color: #d4af37; 
             display: block;
         }
         .heart-divider {
@@ -91,7 +105,7 @@
             margin: 0 auto 40px auto;
         }
 
-        /* Três diferenciais com ícones dourados */
+        /* Três diferenciais */
         .features-row {
             display: flex;
             justify-content: center;
@@ -120,10 +134,10 @@
             line-height: 1.3;
         }
 
-        /* Seção Our Story */
+        /* Seção Our Story Reestruturada para Duas Fotos */
         .story-section {
             padding: 50px 30px;
-            max-width: 960px;
+            max-width: 1000px;
             margin: 40px auto;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
@@ -136,19 +150,19 @@
             margin-top: 0;
             margin-bottom: 30px;
         }
-        .story-container {
+        .story-layout-grid {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 30px;
         }
-        .story-text {
-            flex: 1;
+        .story-text-block {
+            flex: 1.2;
             min-width: 300px;
             text-align: left;
         }
-        .story-text p {
+        .story-text-block p {
             font-size: 1.1rem;
             line-height: 1.7;
             color: #cbd5e1;
@@ -163,18 +177,29 @@
             padding-top: 20px;
             text-align: center;
         }
-        .story-image-box {
+        
+        /* Galeria das fotos de família */
+        .story-photos-block {
             flex: 1;
-            min-width: 300px;
-            max-width: 400px;
-            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 280px;
+            max-width: 350px;
         }
-        .owners-image {
+        .story-card-img {
             width: 100%;
             height: auto;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            display: block;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .photo-caption {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 5px;
+            text-align: center;
+            font-style: italic;
         }
 
         /* Seção de Serviços */
@@ -253,7 +278,7 @@
             color: #d4af37;
         }
 
-        /* Botão de Chamada para Ação */
+        /* Botão */
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #d4af37 0%, #aa8413 100%); 
@@ -286,13 +311,15 @@
 
     <header>
         <img src="logo-banner.png" alt="Professional Cleaner Logo and Banner" class="header-banner">
+        <!-- Adicionada a faixa com as regiões atendidas abaixo do banner -->
+        <div class="location-badge">📍 Serving New Haven and Fairfield Counties</div>
     </header>
 
     <div class="hero-image-container">
         <img src="living-room.jpg" alt="Clean and modern living room" class="hero-image">
     </div>
 
-    <!-- Seção do Panfleto (Clean Home, Happy Home) -->
+    <!-- Seção do Panfleto -->
     <section class="promo-banner-section">
         <h1 class="promo-title">
             <span class="white-text">CLEAN HOME</span>
@@ -321,17 +348,25 @@
         </div>
     </section>
 
-    <!-- Seção Our Story -->
+    <!-- Seção Our Story Ampliada para Duas Fotos (Founder + Next Generation) -->
     <section class="story-section">
         <h2>Our Story</h2>
-        <div class="story-container">
-            <div class="story-text">
+        <div class="story-layout-grid">
+            <div class="story-text-block">
                 <p>Founded by Acelino in 1994, Professional Cleaner has built a reputation for quality, integrity, and exceptional service.</p>
                 <p>Today, the company proudly continues into its next generation under the leadership of Andressa and Paulo, Acelino’s daughter and son-in-law. Together, they are committed to preserving the values that have defined Professional Cleaner for more than 30 years, while bringing a fresh vision for the future.</p>
                 <p class="story-highlight">Family-owned. Built on trust. Committed to excellence.</p>
             </div>
-            <div class="story-image-box">
-                <img src="owners.png" alt="Andressa and Paulo - Owners of Professional Cleaner" class="owners-image">
+            
+            <div class="story-photos-block">
+                <div>
+                    <img src="founder.png" alt="Mr. Acelino - Founder of Professional Cleaner" class="story-card-img">
+                    <div class="photo-caption">Mr. Acelino, Founder (1994)</div>
+                </div>
+                <div style="margin-top: 15px;">
+                    <img src="owners.png" alt="Andressa and Paulo - Current Owners" class="story-card-img">
+                    <div class="photo-caption">Andressa & Paulo, Next Generation</div>
+                </div>
             </div>
         </div>
     </section>
