@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Cleaner | Quality House Cleaning</title>
+    <!-- Importando a biblioteca de ícones gratuitos Font Awesome -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         /* Estilos Gerais (CSS) */
         body {
@@ -15,7 +17,7 @@
             text-align: center;
         }
         
-        /* Cabeçalho Ajustado com o Azul Profundo da Imagem */
+        /* Cabeçalho */
         header {
             background-color: #060b11; 
             padding: 0;
@@ -23,7 +25,6 @@
             display: flex;
             justify-content: center;
         }
-
         .header-banner {
             width: 100%;
             max-width: 1000px; 
@@ -45,7 +46,7 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        /* Seção Our Story Reestruturada para Lado a Lado */
+        /* Seção Our Story Lado a Lado */
         .story-section {
             padding: 50px 20px;
             max-width: 960px;
@@ -65,7 +66,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap; /* Faz a foto descer em telas de celular */
+            flex-wrap: wrap;
             gap: 40px;
         }
         .story-text {
@@ -88,7 +89,6 @@
             padding-top: 20px;
         }
         
-        /* Estilo da nova foto dos donos */
         .story-image-box {
             flex: 1;
             min-width: 300px;
@@ -99,14 +99,14 @@
             width: 100%;
             height: auto;
             border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 166px rgba(0, 0, 0, 0.1);
             display: block;
         }
 
-        /* Seção de Serviços */
+        /* Seção de Serviços Ampliada para 4 itens */
         .services-section {
             padding: 50px 20px;
-            max-width: 1000px;
+            max-width: 1200px; /* Aumentado para acomodar os 4 serviços confortavelmente */
             margin: 0 auto;
         }
         .services-section h2 {
@@ -116,21 +116,40 @@
         }
         .services-grid {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
         }
         .service-card {
             background: white;
-            padding: 25px;
+            padding: 30px 20px;
             border-radius: 8px;
-            width: 280px;
+            width: 240px; /* Ajustado para caberem 4 em linha no computador */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-top: 5px solid #10b981; 
+            transition: transform 0.2s;
         }
+        .service-card:hover {
+            transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+        }
+        
+        /* Estilização dos desenhos/ícones */
+        .service-icon {
+            font-size: 2.5rem;
+            color: #0284c7; /* Azul profissional do logotipo */
+            margin-bottom: 15px;
+        }
+        
         .service-card h3 {
             margin-top: 0;
             color: #1e293b;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #64748b;
         }
 
         /* Seção de Contato */
@@ -192,7 +211,7 @@
         <img src="living-room.jpg" alt="Clean and modern living room" class="hero-image">
     </div>
 
-    <!-- Seção Our Story com o Texto e a Imagem Lado a Lado -->
+    <!-- Seção Our Story -->
     <section class="story-section">
         <h2>Our Story</h2>
         <div class="story-container">
@@ -207,23 +226,34 @@
         </div>
     </section>
 
+    <!-- Seção de Serviços Atualizada com Desenhos/Ícones -->
     <main class="services-section">
         <h2>Our Cleaning Services</h2>
         
         <div class="services-grid">
             <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-broom"></i></div>
                 <h3>Regular Cleaning</h3>
                 <p>Dusting, mopping, vacuuming, and wiping surfaces to keep your home fresh every week.</p>
             </div>
             
             <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-sparkles"></i></div>
                 <h3>Deep Cleaning</h3>
                 <p>A thorough, detailed scrub of your entire house, including baseboards, ovens, and hard-to-reach areas.</p>
             </div>
             
             <div class="service-card">
-                <h3>Move-In / Move-Out</h3>
+                <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
+                <h3>Move-In / Out</h3>
                 <p>Perfect for renters and buyers. We make the place spotless and ready for the next chapter.</p>
+            </div>
+
+            <!-- Novo Serviço Adicionado -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+                <h3>Commercial Cleaning</h3>
+                <p>Professional cleaning tailored for offices, corporate spaces, and businesses to ensure a safe workspace.</p>
             </div>
         </div>
 
