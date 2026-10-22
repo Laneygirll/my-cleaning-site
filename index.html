@@ -15,22 +15,40 @@
             text-align: center;
         }
         
-        /* Novo Cabeçalho com Imagem do Logotipo */
+        /* Cabeçalho Ajustado com Transição Suave nas Laterais */
         header {
-            background-color: #0d1b2a; /* Fundo escuro combinando com o banner */
+            background-color: #0d1b2a; /* Cor idêntica à borda escura da imagem */
             padding: 0;
             margin: 0;
             display: flex;
             justify-content: center;
-        }
-        .header-banner {
-            width: 100%;
-            max-width: 1000px; /* Alinhado com o tamanho máximo do site */
-            height: auto;
-            display: block;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Seção da Imagem de Destaque (Ação) */
+        /* Efeito de máscara para suavizar a emenda do lado direito e esquerdo */
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Cria um degradê suave nas pontas para sumir com qualquer linha de corte */
+            background: linear-gradient(to right, #0d1b2a 0%, transparent 15%, transparent 85%, #0d1b2a 100%);
+            pointer-events: none;
+        }
+
+        .header-banner {
+            width: 100%;
+            max-width: 1000px; 
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Seção da Imagem de Destaque */
         .hero-image-container {
             max-width: 1000px;
             margin: 30px auto 0 auto;
@@ -44,7 +62,7 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        /* Nova Seção: Our Story */
+        /* Seção: Our Story */
         .story-section {
             padding: 50px 20px;
             max-width: 800px;
@@ -158,7 +176,6 @@
 </head>
 <body>
 
-    <!-- Cabeçalho contendo apenas a imagem perfeita do logotipo -->
     <header>
         <img src="logo-banner.png" alt="Professional Cleaner Logo and Banner" class="header-banner">
     </header>
