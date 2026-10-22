@@ -15,23 +15,22 @@
             text-align: center;
         }
         
-        /* Cabeçalho / Banner Principal */
+        /* Novo Cabeçalho com Imagem do Logotipo */
         header {
-            background-color: #0284c7; 
-            color: white;
-            padding: 60px 20px;
-        }
-        header h1 {
+            background-color: #0d1b2a; /* Fundo escuro combinando com o banner */
+            padding: 0;
             margin: 0;
-            font-size: 3rem;
+            display: flex;
+            justify-content: center;
         }
-        header p {
-            font-size: 1.3rem;
-            margin-top: 10px;
-            color: #e0f2fe;
+        .header-banner {
+            width: 100%;
+            max-width: 1000px; /* Alinhado com o tamanho máximo do site */
+            height: auto;
+            display: block;
         }
 
-        /* Seção da Imagem de Destaque */
+        /* Seção da Imagem de Destaque (Ação) */
         .hero-image-container {
             max-width: 1000px;
             margin: 30px auto 0 auto;
@@ -53,7 +52,7 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            text-align: left; /* Alinhamento de texto para leitura confortável */
+            text-align: left;
         }
         .story-section h2 {
             color: #0369a1;
@@ -159,17 +158,16 @@
 </head>
 <body>
 
-    <!-- Estrutura da Página (HTML) -->
+    <!-- Cabeçalho contendo apenas a imagem perfeita do logotipo -->
     <header>
-        <h1>Professional Cleaner</h1>
-        <p>A Legacy of Excellence Since 1994</p>
+        <img src="logo-banner.png" alt="Professional Cleaner Logo and Banner" class="header-banner">
     </header>
 
     <div class="hero-image-container">
         <img src="living-room.jpg" alt="Clean and modern living room" class="hero-image">
     </div>
 
-    <!-- Nova Seção: Our Story -->
+    <!-- Seção: Our Story -->
     <section class="story-section">
         <h2>Our Story</h2>
         <p>Founded by Acelino in 1994, Professional Cleaner has built a reputation for quality, integrity, and exceptional service.</p>
