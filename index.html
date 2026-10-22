@@ -15,29 +15,13 @@
             text-align: center;
         }
         
-        /* Cabeçalho Aperfeiçoado com Esmaecimento Avançado */
+        /* Cabeçalho Ajustado com o Azul Profundo da Imagem */
         header {
-            background-color: #0b1520; /* Tom azul escuro idêntico à borda da sua imagem */
+            background-color: #060b11; /* Cor exata extraída do fundo da sua foto */
             padding: 0;
             margin: 0;
             display: flex;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Máscara de transição ultra suave */
-        header::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /* Aumentamos o esmaecimento nas pontas para cobrir totalmente qualquer linha dura */
-            background: linear-gradient(to right, #0b1520 0%, transparent 25%, transparent 75%, #0b1520 100%);
-            pointer-events: none;
-            z-index: 2;
         }
 
         .header-banner {
@@ -45,8 +29,6 @@
             max-width: 1000px; 
             height: auto;
             display: block;
-            position: relative;
-            z-index: 1;
         }
 
         /* Seção da Imagem de Destaque */
