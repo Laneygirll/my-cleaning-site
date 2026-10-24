@@ -12,8 +12,8 @@
             --primary-navy: #030f26;      /* Azul-marinho profundo premium */
             --secondary-gold: #e5c158;    /* Dourado elegante */
             --accent-yellow: #FFD700;
-            --text-dark: #ffffff;         /* Texto principal agora é branco para o fundo escuro */
-            --text-light: #cccccc;        /* Texto secundário cinza claro sutil */
+            --text-dark: #ffffff;         /* Texto principal branco para o fundo escuro */
+            --text-light: #cccccc;        /* Texto secundário cinza claro */
             --bg-light: #071735;          /* Fundo de seções internas um pouco mais claro */
             --white: #030f26;             /* Substituído branco pelo fundo azul escuro principal */
             --transition-smooth: all 0.3s ease;
@@ -82,46 +82,71 @@
         }
 
         /* ==========================================================================
-           3. NAVEGAÇÃO / HEADER
+           3. NAVEGAÇÃO / HEADER (LOGOTIPO AMPLO E ABAS ABAIXO)
            ========================================================================== */
-        .navbar {
-            background-color: #020a1a;    /* Fundo escuro sutil para destacar o menu no topo */
+        header.site-header {
+            background-color: #020a1a;
+            padding: 30px 20px 15px 20px;
+            text-align: center;
+        }
+
+        .header-logo-container {
+            display: block;
+            margin-bottom: 25px; /* Espaço elegante entre o logo e o menu */
+        }
+
+        .header-logo-container img {
+            max-width: 500px;    /* Destaque do logotipo na linha de cima */
+            width: 100%;
+            height: auto;
+        }
+
+        /* Banner de Localização idêntico à sua imagem de referência */
+        .location-banner {
+            background-color: #010610;
+            color: var(--secondary-gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 8px 0;
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(229, 193, 88, 0.15);
+        }
+
+        .navbar-sub {
+            background-color: #020a1a;
             padding: 15px 5%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centraliza as abas de navegação abaixo do logo */
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* Sombra mais marcada e profissional */
-            border-bottom: 1px solid rgba(229, 193, 88, 0.2); /* Linha fina dourada na base */
-        }
-
-        .nav-logo img {
-            height: 65px;
-            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(229, 193, 88, 0.2);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             align-items: center;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #ffffff;               /* Links brancos para dar leitura no menu escuro */
-            font-weight: 500;
+            color: #ffffff;
+            font-weight: 600;
             font-size: 1.05rem;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase; /* Abas elegantes em letras maiúsculas */
             transition: var(--transition-smooth);
         }
 
         .nav-links a:hover {
-            color: var(--secondary-gold); /* Acende em dourado ao passar o mouse */
+            color: var(--secondary-gold);
         }
-
         /* ==========================================================================
            4. HERO SECTION (LAYOUT EM DUAS COLUNAS)
            ========================================================================== */
@@ -143,11 +168,11 @@
             margin-bottom: 1.5rem;
             font-weight: 800;
             color: #ffffff;
-            text-align: left; /* Garante o alinhamento elegante à esquerda no texto principal */
+            text-align: left;
         }
 
         .hero-text h1 span {
-            color: var(--secondary-gold); /* Destaca a palavra chave em dourado premium */
+            color: var(--secondary-gold); /* Destaca em dourado premium */
         }
 
         .hero-text p {
@@ -239,7 +264,6 @@
             transition: var(--transition-smooth);
         }
 
-        /* Muda a cor das opções dentro da caixinha de seleção */
         .form-group select option {
             background-color: #020a1a;
             color: #ffffff;
@@ -259,7 +283,7 @@
 
         /* ==========================================================================
            5. SEÇÃO HISTÓRIA (ABOUT US)
-           ========================================================================== */
+           ========================================================================= */
         .story-section {
             padding: 5rem 10%;
             background-color: #030f26;     /* Integrado ao fundo azul principal */
@@ -302,7 +326,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1.5rem;
-            border: 3px solid var(--secondary-gold); /* Elegante borda dourada nas fotos dos proprietários */
+            border: 3px solid var(--secondary-gold); /* Elegante borda dourada nas fotos */
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
 
@@ -393,7 +417,7 @@
         }
 
         .contact-section p {
-            color: #94A3B8;               /* Texto descritivo em cinza claro elegante */
+            color: #94A3B8;               /* Texto descritivo em cinza claro */
             margin-bottom: 2.5rem;
             font-size: 1.1rem;
         }
@@ -424,106 +448,113 @@
         .contact-item span {
             font-size: 2rem;
             display: block;
-            margin-bottom: 12px;
-            filter: drop-shadow(0 2px 5px rgba(229, 193, 88, 0.2));
-        }
-
-        .contact-item h4 {
-            color: var(--secondary-gold); /* Títulos internos mudados para o dourado principal */
-            margin-bottom: 8px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .contact-item a {
-            color: #ffffff;               /* Texto dos links em branco */
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: var(--transition-smooth);
-        }
-
-        .contact-item a:hover {
-            color: var(--secondary-gold); /* Acende em dourado ao passar o mouse */
-        }
-
-        footer {
-            background-color: #020a1a;    /* Tom escuro combinando com a navbar do topo */
-            color: #94A3B8;
-            padding: 2.5rem 5%;
-            text-align: center;
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(229, 193, 88, 0.2); /* Linha divisória dourada no rodapé */
-            letter-spacing: 0.5px;
-        }
-
-        /* ==========================================================================
-           8. RESPONSIVIDADE (MOBILE & TABLETS)
-           ========================================================================== */
-        @media (max-width: 992px) {
-            .hero {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-                padding: 4rem 5%;
-            }
-            .hero-text h1 {
-                text-align: center; /* Centraliza o título principal no tablet/celular */
-            }
-            .hero-text p {
-                margin: 0 auto 2rem auto;
-            }
-            .hero-features {
-                justify-content: center;
-            }
-            .team-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .full-width {
-                grid-column: span 1;
-            }
-            .hero-features {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.8rem;
-            }
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .contact-details {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-        }
+margin-bottom: 12px;
+filter: drop-shadow(0 2px 5px rgba(229, 193, 88, 0.2));
+}
+.contact-item h4 {
+color: var(--secondary-gold); /* Títulos mudados para o dourado principal */
+margin-bottom: 8px;
+font-size: 1.2rem;
+font-weight: 700;
+letter-spacing: 0.5px;
+}
+.contact-item a {
+color: #ffffff;               /* Texto dos links em branco */
+text-decoration: none;
+font-size: 1.1rem;
+font-weight: 500;
+transition: var(--transition-smooth);
+}
+.contact-item a:hover {
+color: var(--secondary-gold); /* Acende em dourado */
+}
+footer {
+background-color: #020a1a;    /* Tom escuro unificado /
+color: #94A3B8;
+padding: 2.5rem 5%;
+text-align: center;
+font-size: 0.95rem;
+border-top: 1px solid rgba(229, 193, 88, 0.2); / Linha divisória dourada no rodapé */
+letter-spacing: 0.5px;
+}
+/* ==========================================================================
+8. RESPONSIVIDADE (MOBILE & TABLETS)
+========================================================================== */
+@media (max-width: 992px) {
+.hero {
+grid-template-columns: 1fr;
+gap: 3rem;
+text-align: center;
+padding: 4rem 5%;
+}
+.hero-text h1 {
+text-align: center;
+}
+.hero-text p {
+margin: 0 auto 2rem auto;
+}
+.hero-features {
+justify-content: center;
+}
+.team-grid {
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+}
+@media (max-width: 576px) {
+.form-grid {
+grid-template-columns: 1fr;
+}
+.full-width {
+grid-column: span 1;
+}
+.hero-features {
+flex-direction: column;
+align-items: center;
+gap: 0.8rem;
+}
+.navbar-sub {
+padding: 10px;
+}
+.nav-links {
+gap: 1rem;
+flex-wrap: wrap;
+justify-content: center;
+}
+}
+.contact-details {
+flex-direction: column;
+gap: 1.5rem;
+}
     </style>
 </head>
+
 <body>
 
-    <!-- NAVEGAÇÃO / MENU SUPERIOR -->
-    <nav class="navbar">
-        <a href="#" class="nav-logo">
+    <!-- NOVO CABEÇALHO: LOGO EM LINHA INTEIRA -->
+    <header class="site-header">
+        <a href="#" class="header-logo-container">
             <img src="logo-banner.png" alt="Professional Cleaner Logo">
         </a>
+    </header>
+
+    <!-- BANNER DE SERVIÇO POR REGIÃO -->
+    <div class="location-banner">
+        📍 Serving New Haven and Fairfield Counties
+    </div>
+
+    <!-- ABAS DE NAVEGAÇÃO LOGO ABAIXO -->
+    <nav class="navbar-sub">
         <ul class="nav-links">
             <li><a href="#story">Our Story</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
-            <!-- Ajustado o contraste do texto interno do botão -->
-            <li><a href="#quote" class="btn-gold" style="padding: 10px 20px; color: #030f26;">Free Estimate</a></li>
+            <li><a href="#quote" class="btn-gold" style="padding: 10px 20px; color: #030f26; font-size: 0.85rem;">Free Estimate</a></li>
         </ul>
     </nav>
 
     <!-- BANNER PRINCIPAL (HERO) -->
-    <header class="hero" id="quote">
+    <header class="hero">
         <div class="hero-text">
             <h1>CLEAN HOME<br><span>HAPPY HOME</span></h1>
             <p>A clean space brings peace, comfort and more time for what really matters. Trusted and high-quality cleaning services tailored completely to your lifestyle.</p>
@@ -534,9 +565,8 @@
                 <div class="feature-tag"><span>✨</span> Attention To Detail</div>
             </div>
         </div>
-
-        <!-- FORMULÁRIO DE ORÇAMENTO -->
-        <div class="form-container">
+        <!-- FORMULÁRIO DE ORÇAMENTO COMPLETO -->
+        <div class="form-container" id="quote">
             <h3>Get a Free Estimate</h3>
             <p>Fill out the form below to receive your personalized quote.</p>
             <form action="#" method="POST">
@@ -572,7 +602,6 @@
             </form>
         </div>
     </header>
-
     <!-- SEÇÃO NOSSA HISTÓRIA -->
     <section class="story-section" id="story">
         <h2 class="section-title">Our Story</h2>
@@ -592,7 +621,6 @@
             </div>
         </div>
     </section>
-
     <!-- SEÇÃO SERVIÇOS -->
     <section class="services-section" id="services">
         <h2 class="section-title">Our Cleaning Services</h2>
@@ -646,7 +674,7 @@
         </div>
     </section>
 
-    <!-- RODAPÉ (Limpo o estilo antigo inline para adotar a nova classe CSS) -->
+    <!-- RODAPÉ -->
     <footer>
         <p>&copy; 2026 Professional Cleaner. All rights reserved.</p>
     </footer>
