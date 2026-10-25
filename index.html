@@ -667,39 +667,58 @@ gap: 1.5rem;
             <a href="#quote" class="btn-gold">Book Your Cleaning Now</a>
         </div>
     </section>
+    
 <style>
-/* Service Section Overrides */
+/* Ultimate Service Row & Icon Fix */
 .services-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Forces all cards onto one line */
+    justify-content: center !important;
+    gap: 12px !important;         /* Tighter spacing to help them fit */
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;             /* Adds a clean swipe scroll if screen gets too tiny */
 }
 
 .service-card {
     background-color: #0b1a30; 
     border-radius: 8px;
-    padding: 20px 15px !important;  /* Forces the big bulky boxes to shrink */
-    width: 260px !important;         /* Keeps the cards compact and balanced */
+    padding: 16px 12px !important;  /* Slimmer internal padding to make cards smaller */
+    flex: 1 1 210px !important;    /* Forces them to shrink so all 4 fit together */
+    max-width: 230px !important;   /* Maximum width constraint */
     text-align: center;
+    box-sizing: border-box !important;
 }
 
+/* Force the wrapper container to open up */
+.service-icon {
+    width: 110px !important;
+    height: 110px !important;
+    margin: 0 auto 10px auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Force your custom illustrations to grow much larger */
 .service-icon img {
-    width: 90px !important;          /* Forces your beautiful drawings to become bigger */
-    height: 90px !important;         /* Maintains proportion */
-    object-fit: contain;
-    margin-bottom: 10px;
+    width: 110px !important;         
+    height: 110px !important;        
+    max-width: 110px !important;
+    max-height: 110px !important;
+    object-fit: contain !important;
 }
 
 .service-card h3 {
-    font-size: 1.25rem !important;   /* Shrinks the oversized card headings */
-    margin-top: 10px;
-    margin-bottom: 8px;
+    font-size: 1.15rem !important;   /* Scaled down heading to match the smaller cards */
+    margin-top: 8px;
+    margin-bottom: 6px;
 }
 
 .service-card p {
-    font-size: 0.9rem !important;    /* Shrinks the description text slightly */
-    line-height: 1.4;
+    font-size: 0.85rem !important;   /* Clean, compact description text */
+    line-height: 1.3;
 }
 </style>
 
