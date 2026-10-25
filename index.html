@@ -667,6 +667,41 @@ gap: 1.5rem;
             <a href="#quote" class="btn-gold">Book Your Cleaning Now</a>
         </div>
     </section>
+<style>
+/* Service Section Overrides */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #0b1a30; 
+    border-radius: 8px;
+    padding: 20px 15px !important;  /* Forces the big bulky boxes to shrink */
+    width: 260px !important;         /* Keeps the cards compact and balanced */
+    text-align: center;
+}
+
+.service-icon img {
+    width: 90px !important;          /* Forces your beautiful drawings to become bigger */
+    height: 90px !important;         /* Maintains proportion */
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.service-card h3 {
+    font-size: 1.25rem !important;   /* Shrinks the oversized card headings */
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    font-size: 0.9rem !important;    /* Shrinks the description text slightly */
+    line-height: 1.4;
+}
+</style>
 
     <!-- SEÇÃO CONTATO -->
     <section class="contact-section" id="contact">
