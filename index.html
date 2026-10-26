@@ -376,18 +376,38 @@
         /* ==========================================================================
            5. SEÇÃO HISTÓRIA (ABOUT US)
            ========================================================================= */
-        .story-section {
-            padding: 5rem 10%;
-            background-color: #030f26;     /* Integrado ao fundo azul principal */
-            text-align: center;
-        }
+ .story-section {
+    padding: 5rem 10%;
+    background-color: #030f26;
+    text-align: left;
+}
 
-        .story-content {
-            max-width: 800px;
-            margin: 0 auto 4rem auto;
-            font-size: 1.15rem;
-            color: #CBD5E1;               /* Texto claro com excelente leitura */
-        }
+/* Container do texto */
+.story-content {
+    max-width: 900px;            /* Um pouco mais largo para acomodar letras maiores */
+    margin: 0 auto 4rem auto;
+    font-size: 1.8rem;           /* Letras bem maiores e imponentes como no Wix */
+    font-weight: 700;            /* Deixa a fonte em negrito para destacar o efeito */
+    color: #CBD5E1;
+}
+
+/* Estilo para dar espaço entre os parágrafos */
+.story-content p {
+    line-height: 1.6;
+    margin-bottom: 2.5rem;       /* Mais espaçamento entre blocos grandes */
+}
+
+/* A MÁGICA RECALIBRADA PARA EFEITO DE DIGITAÇÃO CONTÍNUA */
+.story-content span {
+    color: rgba(203, 213, 225, 0.12); /* Cor apagada de fundo */
+    background-image: linear-gradient(#FFFFFF, #FFFFFF); /* Cor branca pura que vai acender */
+    background-size: 0% 100%; /* Começa totalmente apagada */
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    margin-right: 0.28rem;
+}
 
         .team-grid {
             display: grid;
@@ -696,10 +716,43 @@ gap: 1.5rem;
     <!-- SEÇÃO NOSSA HISTÓRIA -->
     <section class="story-section" id="story">
   <h2 class="section-title">Our Story</h2>
-<div class="story-content">
-    <p>Founded by Acelino in 1994, Professional Cleaner has built a reputation for quality, integrity, and exceptional service. For over 30 years, our family has been dedicated to providing top-tier care. What started as a small venture in Bridgeport, CT, has grown into a trusted local business built on a foundation of hard work, reliability, and the simple joy of a truly clean home.</p>
-    <p>Today, the company proudly continues into its next generation under the leadership of Acelino’s daughter and son-in-law, Andressa and Paulo. Together, they are committed to preserving the values that have defined Professional Cleaner for three decades while bringing a fresh vision for the future. We don't just clean houses; we build lasting relationships with our clients, treating every home with the same care as our own. We are proud to be a part of this community and look forward to serving you.</p>
+<div class="story-content scroll-effect">
+    <p>
+        <span>Founded</span> <span>by</span> <span>Acelino</span> <span>in</span> <span>1994,</span> 
+        <span>Professional</span> <span>Cleaner</span> <span>has</span> <span>built</span> <span>a</span> 
+        <span>reputation</span> <span>for</span> <span>quality,</span> <span>integrity,</span> <span>and</span> 
+        <span>exceptional</span> <span>service.</span> <span>For</span> <span>over</span> <span>30</span> 
+        <span>years,</span> <span>our</span> <span>family</span> <span>has</span> <span>been</span> 
+        <span>dedicated</span> <span>to</span> <span>providing</span> <span>top-tier</span> <span>care.</span> 
+        <span>What</span> <span>started</span> <span>as</span> <span>a</span> <span>small</span> <span>venture</span> 
+        <span>in</span> <span>Bridgeport,</span> <span>CT,</span> <span>has</span> <span>grown</span> <span>into</span> 
+        <span>a</span> <span>trusted</span> <span>local</span> <span>business</span> <span>built</span> <span>on</span> 
+        <span>a</span> <span>foundation</span> <span>of</span> <span>hard</span> <span>work,</span> <span>reliability,</span> 
+        <span>and</span> <span>the</span> <span>simple</span> <span>joy</span> <span>of</span> <span>a</span> <span>truly</span> 
+        <span>clean</span> <span>home.</span>
+    </p>
+    
+    <p>
+        <span>Today,</span> <span>the</span> <span>company</span> <span>proudly</span> <span>continues</span> 
+        <span>into</span> <span>its</span> <span>next</span> <span>generation</span> <span>under</span> <span>the</span> 
+        <span>leadership</span> <span>of</span> <span>Acelino's</span> <span>daughter</span> <span>and</span> 
+        <span>son-in-law,</span> <span>Andressa</span> <span>and</span> <span>Paulo.</span> <span>Together,</span> 
+        <span>they</span> <span>are</span> <span>committed</span> <span>to</span> <span>preserving</span> <span>the</span> 
+        <span>values</span> <span>that</span> <span>have</span> <span>defined</span> <span>Professional</span> 
+        <span>Cleaner</span> <span>for</span> <span>three</span> <span>decades</span> <span>while</span> <span>bringing</span> 
+        <span>a</span> <span>fresh</span> <span>vision</span> <span>for</span> <span>the</span> <span>future.</span>
+    </p>
+    
+    <p>
+        <span>We</span> <span>don't</span> <span>just</span> <span>clean</span> <span>houses;</span> <span>we</span> 
+        <span>build</span> <span>lasting</span> <span>relationships</span> <span>with</span> <span>our</span> <span>clients,</span> 
+        <span>treating</span> <span>every</span> <span>home</span> <span>with</span> <span>the</span> <span>same</span> <span>care</span> 
+        <span>as</span> <span>our</span> <span>own.</span> <span>We</span> <span>are</span> <span>proud</span> <span>to</span> <span>be</span> 
+        <span>a</span> <span>part</span> <span>of</span> <span>this</span> <span>community</span> <span>and</span> <span>look</span> 
+        <span>forward</span> <span>to</span> <span>serving</span> <span>you.</span>
+    </p>
 </div>
+
 
         <div class="team-grid">
             <div class="team-member">
@@ -764,6 +817,45 @@ gap: 1.5rem;
     <footer>
         <p>&copy; 2026 Professional Cleaner. All rights reserved.</p>
     </footer>
+<script>
+    const contentBlock = document.querySelector('.story-content');
+    const spans = document.querySelectorAll('.story-content span');
+
+    function revealTextOnScroll() {
+        if (!contentBlock) return;
+
+        const rect = contentBlock.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Define o início e o fim da animação na tela
+        const start = windowHeight * 0.85;
+        const end = windowHeight * 0.20;
+
+        // Calcula o progresso do scroll sobre o bloco de texto
+        let progress = (start - rect.top) / (start - end);
+        progress = Math.max(0, Math.min(1, progress)); 
+
+        const totalSpans = spans.length;
+        
+        // Aplica o preenchimento linear palavra por palavra na ordem correta
+        spans.forEach((span, index) => {
+            const wordStart = index / totalSpans;
+            const wordEnd = (index + 1) / totalSpans;
+
+            if (progress >= wordEnd) {
+                span.style.backgroundSize = '100% 100%'; 
+            } else if (progress <= wordStart) {
+                span.style.backgroundSize = '0% 100%'; 
+            } else {
+                const wordProgress = (progress - wordStart) / (wordEnd - wordStart);
+                span.style.backgroundSize = `${wordProgress * 100}% 100%`;
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealTextOnScroll);
+    window.addEventListener('load', revealTextOnScroll);
+</script>
 
 </body>
 </html>
