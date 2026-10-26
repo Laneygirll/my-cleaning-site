@@ -818,35 +818,41 @@ gap: 1.5rem;
         <p>&copy; 2026 Professional Cleaner. All rights reserved.</p>
     </footer>
 <script>
-    const contentBlock = document.querySelector('.story-content');
     const spans = document.querySelectorAll('.story-content span');
+    const contentBlock = document.querySelector('.story-content');
 
     function revealTextOnScroll() {
-        if (!contentBlock) return;
+        if (!contentBlock || spans.length === 0) return;
 
         const rect = contentBlock.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        // Define o início e o fim da animação na tela
-        const start = windowHeight * 0.85;
-        const end = windowHeight * 0.20;
+        // Mantém a altura perfeita que você gostou: linha de gatilho fixa na tela
+        const triggerLine = windowHeight * 0.45; 
 
-        // Calcula o progresso do scroll sobre o bloco de texto
-        let progress = (start - rect.top) / (start - end);
-        progress = Math.max(0, Math.min(1, progress)); 
+        // Mede quantos pixels do bloco de texto já passaram da linha de gatilho
+        const pixelsScrolledIntoBlock = triggerLine - rect.top;
+
+        // Descobre a altura total do bloco de texto
+        const totalBlockHeight = rect.height;
+
+        // Calcula o progresso real e contínuo da rolagem sobre o texto
+        let progress = pixelsScrolledIntoBlock / (totalBlockHeight * 0.7);
+        progress = Math.max(0, Math.min(1, progress)); // Mantém estritamente entre 0% e 100%
 
         const totalSpans = spans.length;
         
-        // Aplica o preenchimento linear palavra por palavra na ordem correta
+        // Força o navegador a seguir a ordem numérica exata das palavras, sem pular nenhuma
         spans.forEach((span, index) => {
             const wordStart = index / totalSpans;
             const wordEnd = (index + 1) / totalSpans;
 
             if (progress >= wordEnd) {
-                span.style.backgroundSize = '100% 100%'; 
+                span.style.backgroundSize = '100% 100%'; // Já passou: totalmente acesa
             } else if (progress <= wordStart) {
-                span.style.backgroundSize = '0% 100%'; 
+                span.style.backgroundSize = '0% 100%';   // Ainda não chegou: apagada
             } else {
+                // Acende suavemente a palavra atual da esquerda para a direita
                 const wordProgress = (progress - wordStart) / (wordEnd - wordStart);
                 span.style.backgroundSize = `${wordProgress * 100}% 100%`;
             }
