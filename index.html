@@ -417,30 +417,37 @@
             margin: 0 auto;
         }
 
-        .team-member {
-            background: #071735;          /* Bloco ligeiramente mais claro para destacar os cartões */
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(229, 193, 88, 0.15); /* Moldura dourada bem sutil */
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-            transition: var(--transition-smooth);
-        }
+      .team-member {
+    background: #071735;         /* Bloco ligeiramente mais claro para destacar os cartões */
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(229, 193, 88, 0.15); /* Moldura dourada bem sutil */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: var(--transition-smooth);
+    
+    /* NOVAS REGRAS DE ALINHAMENTO E CLIQUE */
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* Garante que a foto, nome e cargo fiquem 100% centralizados no card */
+    text-align: center;
+    cursor: pointer;             /* Transforma a seta do mouse em uma mãozinha clicável */
+}
 
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(229, 193, 88, 0.2); /* Brilho dourado ao passar o mouse */
-            border-color: var(--secondary-gold);
-        }
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(229, 193, 88, 0.2); /* Brilho dourado ao passar o mouse */
+    border-color: var(--secondary-gold);
+}
 
-        .team-avatar {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-            border: 3px solid var(--secondary-gold); /* Elegante borda dourada nas fotos */
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-        }
+.team-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--secondary-gold); /* Elegante borda dourada nas fotos */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
 
         .team-member h3 {
             color: #ffffff;               /* Nome em branco destacado */
@@ -455,6 +462,50 @@
             font-size: 1rem;
             letter-spacing: 0.5px;
         }
+/* Estilo da janela flutuante que cobre a tela inteira ao clicar na foto */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 15, 38, 0.95); /* Fundo azul escuro bem transparente combinando com seu site */
+    z-index: 9999; /* Garante que fica por cima de absolutamente tudo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo da foto expandida */
+.modal-content {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 12px;
+    border: 2px solid var(--secondary-gold); /* Bordinha dourada charmosa na foto grande */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    animation: zoomIn 0.3s ease-out; /* Animação suave de abertura */
+}
+
+/* Botão de fechar (X) */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--secondary-gold); /* Fica dourado ao passar o mouse */
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
 
         /* ==========================================================================
            6. SEÇÃO SERVIÇOS
