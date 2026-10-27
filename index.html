@@ -542,25 +542,82 @@
             border-right: 1px solid rgba(229, 193, 88, 0.3);
         }
 
-        .service-icon {
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            filter: drop-shadow(0 2px 8px rgba(229, 193, 88, 0.3)); /* Brilho sutil nos ícones */
-        }
+      .service-icon {
+    width: 105px !important;    /* Força o ícone a ficar maior e com excelente visualização */
+    height: 105px !important;
+    object-fit: contain !important;
+    margin-bottom: 1.5rem !important;
+    display: inline-block !important;
+    filter: drop-shadow(0 2px 8px rgba(229, 193, 88, 0.3)); /* Brilho sutil dourado */
+    transition: transform 0.3s ease !important;
+}
 
-        .service-card h3 {
-            color: var(--secondary-gold); /* Título do serviço em dourado elegante */
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
+/* Efeito sutil de zoom no desenho ao passar o mouse */
+.service-card:hover .service-icon {
+    transform: scale(1.08);
+}
 
-        .service-card p {
-            color: #94A3B8;               /* Descrição legível em cinza suave */
-            font-size: 1rem;
-            line-height: 1.5;
-        }
+/* O SEGREDO: Esconde a descrição antiga da tela inicial */
+.service-card p {
+    display: none !important; 
+}
+
+/* Nova regra para o texto detalhado oculto que o JavaScript vai ler */
+.service-details {
+    display: none !important;
+}
+/* --- JANELA FLUTUANTE DE SERVIÇOS RECALIBRADA --- */
+.service-modal-content {
+    background-color: #071735;       /* Fundo azul escuro idêntico ao do card */
+    padding: 3.5rem 3rem;            /* Bastante espaço interno para respirar */
+    border-radius: 16px;             /* Bordas arredondadas e elegantes */
+    max-width: 700px;                /* Tamanho bem maior e imponente para leitura */
+    width: 90%;                      /* Garante que fica responsivo em telas menores */
+    border: 2px solid var(--secondary-gold); /* Moldura dourada marcante */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;             /* CENTRA TUDO: Ícone, Título e Texto */
+    text-align: center;              /* Centraliza os textos por padrão */
+    position: relative;              /* Mantém o botão de fechar no lugar certo */
+    animation: zoomIn 0.3s ease-out;
+}
+
+/* Organiza o Cabeçalho com o Ícone Gigante no topo */
+.service-modal-header {
+    display: flex;
+    flex-direction: column;          /* Força o título a ir para BAIXO do ícone */
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+/* O ÍCONE GIGANTE */
+.service-modal-header img {
+    width: 130px !important;         /* Tamanho gigante para destaque total */
+    height: 130px !important;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(229, 193, 88, 0.3)); /* Brilho dourado no ícone */
+}
+
+.service-modal-header h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* O BLOCO DE TEXTO LOGO ABAIXO */
+.service-modal-body {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #CBD5E1;
+    text-align: left;                /* Texto alinhado à esquerda para leitura confortável */
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória sutil */
+}
 
         /* ==========================================================================
            7. SEÇÃO CONTATO & FOOTER
@@ -821,35 +878,55 @@ gap: 1.5rem;
        <!-- SEÇÃO SERVIÇOS -->
     <section class="services-section" id="services">
         <h2 class="section-title">Our Cleaning Services</h2>
-           <div class="services-grid">
-            <!-- Card 1: Regular Cleaning -->
-            <div class="service-card">
-                <div class="service-icon" style="margin-bottom: 12px;"><img src="icon-regular.png" alt="Regular Cleaning Icon" style="width: 120px; height: 120px; object-fit: contain;"></div>
-                <h3>Regular Cleaning</h3>
-                <p>Weekly maintenance to keep your home fresh.</p>
+       <div class="services-grid">
+        <!-- Card 1: Regular Cleaning -->
+        <div class="service-card">
+            <div class="service-icon" style="margin-bottom: 12px;">
+                <img src="icon-regular.png" alt="Regular Cleaning">
             </div>
-
-            <!-- Card 2: Deep Cleaning -->
-            <div class="service-card">
-               <div class="service-icon" style="margin-bottom: 12px;"><img src="icon-deep.png" alt="Deep Cleaning Icon" style="width: 120px; height: 120px; object-fit: contain;"></div>
-                <h3>Deep Cleaning</h3>
-                <p>Thorough scrub including baseboards and ovens.</p>
-            </div>
-
-            <!-- Card 3: Move-In / Out -->
-            <div class="service-card">
-                <div class="service-icon" style="margin-bottom: 12px;"><img src="icon-move.png" alt="Move-In / Out Icon" style="width: 120px; height: 120px; object-fit: contain;"></div>
-                <h3>Move-In / Out</h3>
-                <p>Spotless cleaning for transitions.</p>
-            </div>
-
-            <!-- Card 4: Commercial Cleaning -->
-            <div class="service-card">
-                <div class="service-icon" style="margin-bottom: 12px;"><img src="icon-commercial.png" alt="Commercial Cleaning Icon" style="width: 120px; height: 120px; object-fit: contain;"></div>
-                <h3>Commercial Cleaning</h3>
-                <p>Tailored cleaning for offices and businesses.</p>
+            <h3>Regular Cleaning</h3>
+            <!-- Texto antigo escondido + Detalhes completos para a Janela Flutuante -->
+            <div class="service-details" style="display: none;">
+                Weekly maintenance to keep your home fresh. Our complete residential cleaning covers every corner of your living spaces. We meticulously dust all surfaces, vacuum and mop floors, sanitize bathrooms, and clean kitchen counters, cabinets, and appliances. This service is fully customizable to fit your home's unique layout and your family's personal routine, ensuring a fresh and truly healthy living environment.
             </div>
         </div>
+
+        <!-- Card 2: Deep Cleaning -->
+        <div class="service-card">
+            <div class="service-icon" style="margin-bottom: 12px;">
+                <img src="icon-deep.png" alt="Deep Cleaning">
+            </div>
+            <h3>Deep Cleaning</h3>
+            <!-- Texto antigo escondido + Detalhes completos para a Janela Flutuante -->
+            <div class="service-details" style="display: none;">
+                Thorough scrub including baseboards and ovens. Deep cleaning goes far beyond the surface to tackle hidden dust and built-up grime. We detail high and low areas, including baseboards, window sills, door frames, light fixtures, and behind reachable appliances. Perfect for seasonal refreshing, preparing for special events, or restoring your home's original sparkle from top to bottom.
+            </div>
+        </div>
+
+        <!-- Card 3: Move-In / Out -->
+        <div class="service-card">
+            <div class="service-icon" style="margin-bottom: 12px;">
+                <img src="icon-move.png" alt="Move-In / Out">
+            </div>
+            <h3>Move-In / Out</h3>
+            <!-- Texto antigo escondido + Detalhes completos para a Janela Flutuante -->
+            <div class="service-details" style="display: none;">
+                Spotless cleaning for transitions. Whether you are prepping a house to hand over keys or moving into a new home, we ensure the space looks spotless. This deep service includes scrubbing inside empty cabinets and drawers, detailed refrigerator and oven cleaning, and thorough sanitization of all rooms.
+            </div>
+        </div>
+
+        <!-- Card 4: Commercial Cleaning -->
+        <div class="service-card">
+            <div class="service-icon" style="margin-bottom: 12px;">
+                <img src="icon-commercial.png" alt="Commercial Cleaning">
+            </div>
+            <h3>Commercial Cleaning</h3>
+            <!-- Texto antigo escondido + Detalhes completos para a Janela Flutuante -->
+            <div class="service-details" style="display: none;">
+                Tailored cleaning for offices and businesses. A clean workspace promotes productivity and leaves an exceptional impression on clients. Our commercial cleaning caters to offices, retail units, and shared business environments. We handle trash removal, desk and electronics dusting, floor care, and rigorous sanitization of breakrooms and common restrooms on a flexible schedule.
+            </div>
+        </div>
+    </div>
 
         <!-- Centralização do botão de chamada para ação de serviços -->
         <div class="services-cta" style="text-align: center; margin-top: 1.5rem;">
@@ -868,6 +945,26 @@ gap: 1.5rem;
     <footer>
         <p>&copy; 2026 Professional Cleaner. All rights reserved.</p>
     </footer>
+        <!-- Janela Flutuante (Modal) para expandir os detalhes do Serviço -->
+    <div id="service-modal" class="modal-overlay" style="display: none;">
+        <div class="service-modal-content">
+            <span class="modal-close" id="close-service-modal">&times;</span>
+            <div class="service-modal-header">
+                <img id="s-modal-icon" src="" alt="Icon">
+                <h3 id="s-modal-title">Service Title</h3>
+            </div>
+            <div class="service-modal-body" id="s-modal-text">
+                Detailed text goes here...
+            </div>
+        </div>
+    </div>
+
+        <!-- Janela Flutuante (Modal) para expandir a foto -->
+    <div id="image-modal" class="modal-overlay" style="display: none;">
+        <span class="modal-close">&times;</span>
+        <img id="modal-img" class="modal-content" src="" alt="Foto expandida">
+    </div>
+
 <script>
     const spans = document.querySelectorAll('.story-content span');
     const contentBlock = document.querySelector('.story-content');
@@ -912,6 +1009,83 @@ gap: 1.5rem;
 
     window.addEventListener('scroll', revealTextOnScroll);
     window.addEventListener('load', revealTextOnScroll);
+
+     // CÓDIGO PARA EXPANDIR AS FOTOS DOS CARDS DA EQUIPE (CORRIGIDO)
+    const teamCards = document.querySelectorAll('.team-member');
+    const imageModal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-img');
+
+    if (teamCards && imageModal) {
+        teamCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const img = card.querySelector('.team-avatar');
+                if (img && modalImage) {
+                    imageModal.style.display = 'flex'; // Abre a janela flutuante
+                    modalImage.src = img.src;         // Copia o caminho da foto
+                }
+            });
+        });
+    }
+
+    // SOLUÇÃO: Encontra o botão X de fechar específico desta janela e ativa o clique
+    if (imageModal) {
+        const teamCloseBtn = imageModal.querySelector('.modal-close');
+        if (teamCloseBtn) {
+            teamCloseBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que o clique interfira em outras partes da tela
+                imageModal.style.display = 'none';
+            });
+        }
+
+        // Continua fechando a janela se o usuário clicar no fundo escuro fora da foto
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                imageModal.style.display = 'none';
+            }
+        });
+    }
+
+    // CÓDIGO PARA EXPANDIR OS DETALHES DOS SERVIÇOS
+    const serviceCards = document.querySelectorAll('.service-card');
+    const serviceModal = document.getElementById('service-modal');
+    const sModalIcon = document.getElementById('s-modal-icon');
+    const sModalTitle = document.getElementById('s-modal-title');
+    const sModalText = document.getElementById('s-modal-text');
+    const closeServiceBtn = document.getElementById('close-service-modal');
+
+    if (serviceCards && serviceModal) {
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const icon = card.querySelector('.service-icon img');
+                const title = card.querySelector('h3');
+                const details = card.querySelector('.service-details');
+
+                if (icon && title && details && sModalIcon && sModalTitle && sModalText) {
+                    sModalIcon.src = icon.src;
+                    sModalTitle.innerText = title.innerText;
+                    sModalText.innerText = details.innerText;
+                    serviceModal.style.display = 'flex'; // Abre o modal de serviço
+                }
+            });
+        });
+    }
+
+    // Fecha o modal de serviço ao clicar no (X)
+    if (closeServiceBtn && serviceModal) {
+        closeServiceBtn.addEventListener('click', () => {
+            serviceModal.style.display = 'none';
+        });
+    }
+
+    // Fecha o modal se o usuário clicar no fundo escuro
+    if (serviceModal) {
+        serviceModal.addEventListener('click', (e) => {
+            if (e.target === serviceModal) {
+                serviceModal.style.display = 'none';
+            }
+        });
+    }
+
 </script>
 
 </body>
