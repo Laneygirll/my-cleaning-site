@@ -254,46 +254,92 @@
             align-items: center;
         }
 
-        .hero-text h1 {
-            font-size: 3.2rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            color: #ffffff;
-            text-align: left;
-        }
+ .hero-content {
+    text-align: center;
+    margin: 0 auto;
+}
+.hero-content h1 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 3.5rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+.hero-content .gold-text {
+    color: #e5c158;
+}
+.heart-divider {
+    font-size: 1.8rem;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.heart-divider::before,
+.heart-divider::after {
+    content: "";
+    flex: 1;
+    max-width: 90px; /* Increased from 60px to match the picture */
+    height: 1.5px;   /* Slightly thicker line */
+    background: linear-gradient(to right, transparent, #e5c158);
+}
 
-        .hero-text h1 span {
-            color: var(--secondary-gold); /* Destaca em dourado premium */
-        }
+.hero-subtext {
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
+}
 
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #CBD5E1;
-            max-width: 600px;
-        }
+  /* Linha Divisória Fina e Dourada */
+.hero-divider-line {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(229, 193, 88, 0.3), transparent);
+    margin: 2.5rem auto;
+    width: 90%;
+}
 
-        .hero-features {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
+/* Alinhamento dos Emblemas em Linha */
+.hero-badges-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    margin-top: 1rem;
+}
 
-        .feature-tag {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(229, 193, 88, 0.08); /* Fundo com toque dourado translúcido */
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(229, 193, 88, 0.25);
-        }
+/* Itens Individuais dos Emblemas */
+.badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    max-width: 150px;
+}
 
-        .feature-tag span {
-            color: var(--secondary-gold);
-        }
+/* Ícones Maiores */
+.badge-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+/* Tipografia Menor e Elegante para os Textos */
+.badge-item h3 {
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    color: #ffffff;
+    margin: 0;
+}
 
         /* FORMULÁRIO DO HERO - ESTILO PREMIUM INTEGRADO */
         .form-container {
@@ -771,19 +817,31 @@ gap: 1.5rem;
         </ul>
 </nav>
 
-
     <!-- BANNER PRINCIPAL (HERO) -->
     <header class="hero">
-        <div class="hero-text">
-            <h1>CLEAN HOME<br><span>HAPPY HOME</span></h1>
-            <p>A clean space brings peace, comfort and more time for what really matters. Trusted and high-quality cleaning services tailored completely to your lifestyle.</p>
-            
-            <div class="hero-features">
-                <div class="feature-tag"><span>🏠</span> Trusted & Reliable</div>
-                <div class="feature-tag"><span>🛡️</span> Quality Cleaning</div>
-                <div class="feature-tag"><span>✨</span> Attention To Detail</div>
-            </div>
+   <div class="hero-content">
+    <h1>CLEAN HOME<br><span class="gold-text">HAPPY HOME</span></h1>
+    <div class="heart-divider">💛</div>
+    <p class="hero-subtext">A clean space brings peace, comfort and more time for what really matters.<br>Trusted and high-quality cleaning services tailored completely to your lifestyle.</p>
+    
+    <hr class="hero-divider-line">
+    
+    <div class="hero-badges-container">
+        <div class="badge-item">
+            <span class="badge-icon">🏠</span>
+            <h3>TRUSTED<br>& RELIABLE</h3>
         </div>
+        <div class="badge-item">
+            <span class="badge-icon">🛡️</span>
+            <h3>QUALITY<br>CLEANING</h3>
+        </div>
+        <div class="badge-item">
+            <span class="badge-icon">✨</span>
+            <h3>ATTENTION<br>TO DETAIL</h3>
+        </div>
+    </div>
+</div>
+
         <!-- FORMULÁRIO DE ORÇAMENTO COMPLETO -->
         <div class="form-container" id="quote">
             <h3>Get a Free Estimate</h3>
