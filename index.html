@@ -85,24 +85,24 @@
                    /* ==========================================================================
            3. NAVEGAÇÃO / HEADER (LOGOTIPO AMPLO E ABAS ABAIXO)
            ========================================================================== */
-        header.site-header {
-            background-color: #060b11; /* Cor escura original do cabeçalho */
-            padding: 0;                /* Remove os espaços para a imagem abrir totalmente */
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
+   header.site-header {
+    background-color: #010712; /* Azul-marinho ultra escuro que se mistura com a imagem */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 
-        .header-banner {
-            width: 100%;
-            max-width: 1000px;         /* Proporção original perfeita que você guardou */
-            height: auto;
-            display: block;
-        }
-
-
+.header-banner {
+    width: 100%;
+    max-width: 1200px;
+    max-height: 350px; /* Limita a altura para deixar a tarja um pouco menor */
+    object-fit: contain; /* Garante que a logo não fique achatada ou distorcida */
+    height: auto;
+    display: block;
+}
 
         /* Banner de Localização idêntico à sua imagem de referência */
         .location-banner {
@@ -339,6 +339,29 @@
     line-height: 1.4;
     color: #ffffff;
     margin: 0;
+}
+
+/* --- ADAPTAÇÃO PARA CELULARES (RESPONSIVIDADE) --- */
+@media (max-width: 768px) {
+    /* Diminui o texto gigante para caber na tela do celular */
+    .hero-content h1 {
+        font-size: 2.2rem !important; 
+        line-height: 1.3;
+    }
+    
+    /* Alinha os emblemas um embaixo do outro no celular */
+    .hero-badges-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 30px !important;
+        margin-top: 2rem;
+    }
+
+    /* Ajusta o espaçamento do texto explicativo */
+    .hero-subtext {
+        font-size: 1rem !important;
+        padding: 0 15px;
+    }
 }
 
         /* FORMULÁRIO DO HERO - ESTILO PREMIUM INTEGRADO */
