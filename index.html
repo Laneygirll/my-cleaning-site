@@ -361,6 +361,53 @@
     .hero-subtext {
         font-size: 1rem !important;
         padding: 0 15px;
+
+       /* Joga o formulario para baixo do texto no celular */
+    .hero-container, .hero-section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 20px 10px !important;
+        height: auto !important;
+    }
+    .form-container, .estimate-form {
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin: 2rem auto 0 auto !important;
+        width: 100% !important;
+        max-width: 360px !important;
+    }
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+     /* Empilha os cartões de serviço em uma coluna no celular */
+    .services-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+    }
+    .service-card {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+    }
+
+    /* Corrige o texto cortado da seção Our Story no celular */
+    .about-section, .story-container {
+        padding: 20px 15px !important;
+        text-align: center !important;
+    }
+    .about-section p, .story-container p {
+        font-size: 1.05rem !important;
+        line-height: 1.6 !important;
+        word-wrap: break-word !important;
+        white-space: normal !important;
+    }
     }
 }
 
