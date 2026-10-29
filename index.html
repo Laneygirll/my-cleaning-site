@@ -338,11 +338,15 @@
     letter-spacing: 1px;
     line-height: 1.4;
     color: #ffffff;
-    margin: 0;
+        margin: 0;
 }
 
-/* --- ADAPTAÇÃO PARA CELULARES (RESPONSIVIDADE) --- */
+/* ==========================================
+   MOBILE RESPONSIVENESS SECTION
+========================================== */
 @media (max-width: 768px) {
+
+
     /* Diminui o texto gigante para caber na tela do celular */
     .hero-content h1 {
         font-size: 2.2rem !important; 
@@ -362,15 +366,16 @@
         font-size: 1rem !important;
         padding: 0 15px;
 
-       /* Joga o formulario para baixo do texto no celular */
-    .hero-container, .hero-section {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        text-align: center !important;
-        padding: 20px 10px !important;
-        height: auto !important;
-    }
+ /* Joga o formulario para baixo do texto no celular */
+.hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 20px 10px !important;
+    height: auto !important;
+}
+
     .form-container, .estimate-form {
         position: relative !important;
         right: auto !important;
@@ -384,13 +389,18 @@
         width: 100% !important;
         max-width: 100% !important;
     }
+    
      /* Empilha os cartões de serviço em uma coluna no celular */
     .services-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 20px !important;
-    }
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+}
+
     .service-card {
         width: 100% !important;
         max-width: 320px !important;
