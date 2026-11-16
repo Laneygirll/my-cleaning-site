@@ -767,6 +767,110 @@ letter-spacing: 0.5px;
 /* ==========================================================================
 8. RESPONSIVIDADE (MOBILE & TABLETS)
 ========================================================================== */
+@media (max-width: 768px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Menu superior ajustado para caber na tela do celular */
+    .navbar-sub {
+        padding: 12px 10px;
+        width: 100%;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-links .btn-gold {
+        padding: 8px 14px !important;
+        font-size: 0.8rem !important;
+        white-space: nowrap;
+    }
+
+    /* Banner Hero e Formulário centralizados */
+    .hero {
+        padding: 3rem 1.2rem;
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-badges-container {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .form-container {
+        padding: 1.8rem 1.2rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Seção História e Equipe em 1 coluna */
+    .story-section {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .story-content {
+        font-size: 1.25rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .team-member {
+        padding: 2rem 1.5rem;
+    }
+
+    /* Cards de Serviços em 1 coluna centralizada */
+    .services-section {
+        padding: 3.5rem 1.2rem;
+    }
+
+    .services-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .service-card {
+        width: 100% !important;
+        max-width: 340px !important;
+        flex: none !important;
+    }
+
+    /* Contato e Rodapé */
+    .contact-section {
+        padding: 3rem 1.2rem !important;
+    }
+
+    .contact-item {
+        min-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .contact-info a {
+        word-break: break-all;
+    }
+}
 
     </style>
 </head>
